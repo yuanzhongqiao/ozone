@@ -1,99 +1,125 @@
 Apache Ozone
 ===
 
-Ozone is a scalable, redundant, and distributed object store for Hadoop and Cloud-native environments. Apart from scaling to billions of objects of varying sizes, Ozone can function effectively in containerized environments such as Kubernetes and YARN.
-
-
- * MULTI-PROTOCOL SUPPORT: Ozone supports different protocols like S3 and Hadoop File System APIs.
- * SCALABLE: Ozone is designed to scale to tens of billions of files and blocks and, in the future, even more.
- * CONSISTENT: Ozone is a strongly consistent object store. This consistency is achieved by using protocols like RAFT.
- * CLOUD-NATIVE: Ozone is designed to work well in containerized environments like YARN and Kubernetes.
- * SECURE: Ozone integrates with Kerberos infrastructure for authentication, supports native ACLs and integrates with Ranger for access control and supports TDE and on-wire encryption.
- * HIGHLY AVAILABLE: Ozone is a fully replicated system that is designed to survive multiple failures.
-
-## Documentation
-
-The latest documentation is generated together with the releases and hosted on the apache site.
-
-Please check [the documentation page](https://ozone.apache.org/docs/) for more information.
-
-## Contact
-
-Ozone is a top level project under the [Apache Software Foundation](https://apache.org)
-
- * Ozone [web page](https://ozone.apache.org)
- * Mailing lists
-     * For any questions use: [dev@ozone.apache.org](https://lists.apache.org/list.html?dev@ozone.apache.org)
- * Chat: There are a few ways to interact with the community
-     * You can find the #ozone channel on the official ASF Slack. Invite link is [here](http://s.apache.org/slack-invite).
-     * You can use [GitHub Discussions](https://github.com/apache/ozone/discussions) to post questions or follow community syncs. 
- * There are Open [Weekly calls](https://cwiki.apache.org/confluence/display/OZONE/Ozone+Community+Calls) where you can ask anything about Ozone.
-    * Past meeting notes are also available from the wiki.
- * Reporting security issues: Please consult with [SECURITY.md](./SECURITY.md) about reporting security vulnerabilities and issues.
-
-## Download
-
-Latest release artifacts (source release and binary packages) are [available](https://ozone.apache.org/downloads/) from the Ozone web page.
-
-## Quick start
-
-### Run Ozone from published Docker image
-
-The easiest way to start a cluster with docker is:
-
-```
-docker run -p 9878:9878 apache/ozone
-```
-
-And you can use AWS S3 cli:
-
-```
-aws s3api --endpoint http://localhost:9878/ create-bucket --bucket=wordcount
+<div class="Box-sc-g0xbh4-0 bJMeLZ js-snippet-clipboard-copy-unpositioned" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text"><h1 tabindex="-1" dir="auto"><a id="user-content-apache-ozone" class="anchor" aria-hidden="true" tabindex="-1" href="#apache-ozone"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">阿帕奇臭氧</font></font></h1>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ozone 是适用于 Hadoop 和云原生环境的可扩展、冗余和分布式对象存储。</font><font style="vertical-align: inherit;">除了扩展到数十亿个不同大小的对象之外，Ozone 还可以在 Kubernetes 和 YARN 等容器化环境中有效运行。</font></font></p>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">多协议支持：Ozone 支持不同的协议，例如 S3 和 Hadoop 文件系统 API。</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">可扩展：Ozone 旨在扩展到数百亿个文件和块，并且在未来甚至更多。</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">一致：Ozone 是一个强一致的对象存储。</font><font style="vertical-align: inherit;">这种一致性是通过使用 RAFT 等协议来实现的。</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">云原生：Ozone 旨在在 YARN 和 Kubernetes 等容器化环境中良好运行。</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">安全：Ozone 与 Kerberos 基础设施集成以进行身份&ZeroWidthSpace;&ZeroWidthSpace;验证，支持本机 ACL，并与 Ranger 集成以进行访问控制，并支持 TDE 和在线加密。</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">高可用性：Ozone 是一个完全复制的系统，旨在承受多次故障。</font></font></li>
+</ul>
+<h2 tabindex="-1" dir="auto"><a id="user-content-documentation" class="anchor" aria-hidden="true" tabindex="-1" href="#documentation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文档</font></font></h2>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">最新文档与版本一起生成并托管在 apache 站点上。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">请查看</font></font><a href="https://ozone.apache.org/docs/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文档页面</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">以获取更多信息。</font></font></p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-contact" class="anchor" aria-hidden="true" tabindex="-1" href="#contact"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">接触</font></font></h2>
+<p dir="auto"><font style="vertical-align: inherit;"><a href="https://apache.org" rel="nofollow"><font style="vertical-align: inherit;">Ozone是Apache软件基金会</font></a><font style="vertical-align: inherit;">下的顶级项目</font></font><a href="https://apache.org" rel="nofollow"><font style="vertical-align: inherit;"></font></a></p>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">臭氧</font></font><a href="https://ozone.apache.org" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">网页</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">邮件列表
+</font></font><ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如有任何问题，请使用：</font></font><a href="https://lists.apache.org/list.html?dev@ozone.apache.org" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">dev@ozone.apache.org</font></font></a></li>
+</ul>
+</li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">聊天：有几种与社区互动的方式
+</font></font><ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">您可以在官方 ASF Slack 上找到#ozone 频道。</font><font style="vertical-align: inherit;">邀请链接在</font></font><a href="http://s.apache.org/slack-invite" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">这里</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">您可以使用</font></font><a href="https://github.com/apache/ozone/discussions"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">GitHub 讨论</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">来发布问题或关注社区同步。</font></font></li>
+</ul>
+</li>
+<li><font style="vertical-align: inherit;"></font><a href="https://cwiki.apache.org/confluence/display/OZONE/Ozone+Community+Calls" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">每周</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">都有开放电话</font><font style="vertical-align: inherit;">，您可以询问有关臭氧的任何问题。
+</font></font><ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">过去的会议记录也可从 wiki 获取。</font></font></li>
+</ul>
+</li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">报告安全问题：请咨询</font></font><a href="/apache/ozone/blob/master/SECURITY.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SECURITY.md</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">有关报告安全漏洞和问题的信息。</font></font></li>
+</ul>
+<h2 tabindex="-1" dir="auto"><a id="user-content-download" class="anchor" aria-hidden="true" tabindex="-1" href="#download"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">下载</font></font></h2>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">最新版本的工件（源代码版本和二进制包）可</font><font style="vertical-align: inherit;">从 Ozone 网页</font></font><a href="https://ozone.apache.org/downloads/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">获取。</font></font></a><font style="vertical-align: inherit;"></font></p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-quick-start" class="anchor" aria-hidden="true" tabindex="-1" href="#quick-start"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">快速开始</font></font></h2>
+<h3 tabindex="-1" dir="auto"><a id="user-content-run-ozone-from-published-docker-image" class="anchor" aria-hidden="true" tabindex="-1" href="#run-ozone-from-published-docker-image"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">从发布的 Docker 镜像运行 Ozone</font></font></h3>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">使用 docker 启动集群的最简单方法是：</font></font></p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>docker run -p 9878:9878 apache/ozone
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="docker run -p 9878:9878 apache/ozone" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">您可以使用AWS S3 cli：</font></font></p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>aws s3api --endpoint http://localhost:9878/ create-bucket --bucket=wordcount
 aws s3 --endpoint http://localhost:9878 cp --storage-class REDUCED_REDUNDANCY  /tmp/testfile  s3://wordcount/testfile
-```
-
-### Run Ozone from released artifact
-
-If you need a more realistic cluster, you can [download](https://ozone.apache.org/downloads/) the latest (binary) release package, and start a cluster with the help of docker-compose:
-
-After you untar the binary:
-
-```
-cd compose/ozone
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="aws s3api --endpoint http://localhost:9878/ create-bucket --bucket=wordcount
+aws s3 --endpoint http://localhost:9878 cp --storage-class REDUCED_REDUNDANCY  /tmp/testfile  s3://wordcount/testfile" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<h3 tabindex="-1" dir="auto"><a id="user-content-run-ozone-from-released-artifact" class="anchor" aria-hidden="true" tabindex="-1" href="#run-ozone-from-released-artifact"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">从已发布的工件运行 Ozone</font></font></h3>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果您需要更实际的集群，可以</font></font><a href="https://ozone.apache.org/downloads/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">下载</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">最新的（二进制）发布包，并在 docker-compose 的帮助下启动集群：</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">解压二进制文件后：</font></font></p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>cd compose/ozone
 docker-compose up -d --scale datanode=3
-```
-
-The `compose` folder contains different sets of configured clusters (secure, HA, mapreduce example), you can check the various subfolders for more examples.
-
-### Run on Kubernetes
-
-Ozone is a first class citizen of the Cloud-Native environments. The binary package contains multiple sets of K8s resource files to show how it can be deployed.
-
-## Build from source
-
-Ozone can be built with [Apache Maven](https://maven.apache.org):
-
-```
-mvn clean install -DskipTests
-```
-
-And can be started with the help of Docker:
-
-```
-cd hadoop-ozone/dist/target/ozone-*/compose/ozone
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="cd compose/ozone
+docker-compose up -d --scale datanode=3" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">该</font></font><code>compose</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文件夹包含不同的配置集群集（安全、HA、mapreduce 示例），您可以检查各个子文件夹以获取更多示例。</font></font></p>
+<h3 tabindex="-1" dir="auto"><a id="user-content-run-on-kubernetes" class="anchor" aria-hidden="true" tabindex="-1" href="#run-on-kubernetes"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在 Kubernetes 上运行</font></font></h3>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ozone 是云原生环境的一等公民。</font><font style="vertical-align: inherit;">二进制包包含多组 K8s 资源文件，以展示如何部署它。</font></font></p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-build-from-source" class="anchor" aria-hidden="true" tabindex="-1" href="#build-from-source"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">从源代码构建</font></font></h2>
+<p dir="auto"><font style="vertical-align: inherit;"></font><a href="https://maven.apache.org" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ozone 可以使用Apache Maven</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">构建</font><font style="vertical-align: inherit;">：</font></font></p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>mvn clean install -DskipTests
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="mvn clean install -DskipTests" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">并可以在 Docker 的帮助下启动：</font></font></p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>cd hadoop-ozone/dist/target/ozone-*/compose/ozone
 docker-compose up -d --scale datanode=3
-```
-For more information, you can check the [Contribution guideline](./CONTRIBUTING.md)
-
-## Contribute
-
-All contributions are welcome.
-
- 1. Please open a [Jira](https://issues.apache.org/jira/projects/HDDS/issues) issue
- 2. And create a pull request
-
-For more information, you can check the [Contribution guideline](./CONTRIBUTING.md)
-
-## License
-
-The Apache Ozone project is licensed under the Apache 2.0 License. See the [LICENSE](./LICENSE.txt) file for details.
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="cd hadoop-ozone/dist/target/ozone-*/compose/ozone
+docker-compose up -d --scale datanode=3" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">欲了解更多信息，您可以查看</font></font><a href="/apache/ozone/blob/master/CONTRIBUTING.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">贡献指南</font></font></a></p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-contribute" class="anchor" aria-hidden="true" tabindex="-1" href="#contribute"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">贡献</font></font></h2>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">欢迎所有贡献。</font></font></p>
+<ol dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">请打开</font></font><a href="https://issues.apache.org/jira/projects/HDDS/issues" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Jira</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">问题</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">并创建拉取请求</font></font></li>
+</ol>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">欲了解更多信息，您可以查看</font></font><a href="/apache/ozone/blob/master/CONTRIBUTING.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">贡献指南</font></font></a></p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-license" class="anchor" aria-hidden="true" tabindex="-1" href="#license"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">执照</font></font></h2>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Apache Ozone 项目根据 Apache 2.0 许可证获得许可。</font><font style="vertical-align: inherit;">有关详细信息，请参阅</font></font><a href="/apache/ozone/blob/master/LICENSE.txt"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">许可证</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文件。</font></font></p>
+</article></div>
